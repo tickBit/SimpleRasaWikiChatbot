@@ -5,7 +5,7 @@
 
 ## Python modules you'll need:
 - rasa: pip3 install -U rasa
-- wikipeida: pip install wikipedia
+- wikipedia: pip install wikipedia
 
 
 ## Steps to run the app:

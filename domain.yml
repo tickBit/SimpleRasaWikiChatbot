@@ -1,0 +1,44 @@
+version: "2.0"
+
+intents:
+  - greet
+  - goodbye
+  - bot_challenge
+  - ask_info{"entity":"science"}
+
+entities:
+  - entity
+  - science
+
+slots:
+  science:
+    type: text
+    influence_conversation: false
+  entity:
+    type: text
+    influence_conversation: false
+ 
+responses:
+  utter_greet:
+  - text: "Hey!"
+  - text: "Hello! How can I help you?"
+
+  utter_goodbye:
+  - text: "Bye"
+  - text: "Goodbye. See you soon."
+
+  utter_ask_rephrase:
+  - text: "Sorry, I'm not sure I understand. Can you rephrase?"
+  - text: "Can you please rephrase? I did not got that."
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+actions:
+  - utter_greet
+  - utter_goodbye
+  - action_fetch_data
+
+session_config:
+  session_expiration_time: 60  # value in minutes
+  carry_over_slots_to_new_session: true

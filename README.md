@@ -15,10 +15,10 @@
 - [another terminal]
 - rasa shell
 
-## Examples with the bot
+## Example with the bot
 
 - You: tell me about mathematics
-- Bot: <shows info from Wikipedia about mathematics>
+- Bot: ~~ shows info about mathematics from Wikipedia
 
 ## Other info
 

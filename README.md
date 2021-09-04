@@ -15,6 +15,11 @@
 - [another terminal]
 - rasa shell
 
+## Examples with the bot
+
+- You: tell me about mathematics
+- Bot: <shows info from Wikipedia about mathematics>
+
 ## Other info
 
 For some reason, the wikipedia module loads summary of geology if it is asked to fetch information on biology, but if you try it with "biological", you'll get info on biology. Also, the wikipedia module doesn't seem to find summary with "theology", but it finds summary of theology with "teology".

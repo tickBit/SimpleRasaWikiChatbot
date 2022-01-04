@@ -1,47 +1,49 @@
 version: "2.0"
 
 nlu:
-  - intent: bot_challenge
-    examples: |
-      - are you a bot?
-      - are you a human?
-      - am I talking to a bot?
-      - am I talking to a human?
 
-  - intent: greet
-    examples: |
-      - hey
-      - hello
-      - hi
-      - good morning
-      - good evening
-      - hey there
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
 
-  - intent: goodbye
-    examples: |
-      - bye
-      - goodbye
-      - see you around
-      - see you later
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
 
-  - intent: ask_info{"entity":"science"}
-    examples: |
-      - tell me about [mathematics]{"entity":"science","value":"mathematics"}
-      - what is [chemistry]{"entity":"science","value":"science"}?
-      - do you know anything about [science]{"entity":"science","value":"science"}?
-      - are you familiar with [geology]{"entity":"science","value":"science"}?
-      - tell something about [physics]{"entity":"science","value":"science"}
-      - I would like to ask about [theology]{"entity":"science","value":"science"}
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
 
-  - lookup: science
-    examples: |
-      - mathematics
-      - geology
-      - chemistry
-      - philosophy
-      - physics
-      - data science
-      - artificial intelligence
-      - theology
-      - medicine
+- lookup: science
+  examples: |
+    - mathematics
+    - geology
+    - chemistry
+    - philosophy
+    - physics
+    - data science
+    - artificial intelligence
+    - theology
+    - medicine
+
+- intent: ask_info
+  examples: |
+    - tell me about [science]{"entity":"science"}
+    - what is [science]{"entity":"science"}?
+    - do you know anything about [science]{"entity":"science"}?
+    - are you familiar with [science]{"entity":"science"}?
+    - tell something about [science]{"entity":"science"}
+    - I would like to ask about [science]{"entity":"science"}
+
 

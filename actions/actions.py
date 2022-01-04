@@ -2,7 +2,7 @@ from typing import Any, Dict, List, Text
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.interfaces import Action, Tracker
 
-import wikipedia
+import wikipediaapi
 
 class ActionFetchData(Action):
 
@@ -14,14 +14,21 @@ class ActionFetchData(Action):
             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
 
         try:
-            sci = tracker.latest_message['entities'][0]["value"]
-            dispatcher.utter_message("Field of science recognized. Trying to fetch info on it.")
+            sci = tracker.latest_message["entities"][0]["value"]
+            dispatcher.utter_message("Trying to retrieve info on "+sci)
+
+            wiki_wiki = wikipediaapi.Wikipedia('en')
             try:
-                info = wikipedia.summary(sci, sentences = 2)
-                #info = wikipedia.suggest(sci, senteces = 2)
-                #info = wikipedia.page(title=None, pageid=None, auto_suggest=True, redirect=True, preload=False)
-                dispatcher.utter_message(text=info)
+                page_py = wiki_wiki.page(sci)
+
+                sentences = page_py.summary.split(".")
+
+                # get 4 sentences of the summary
+                text = ".".join(sentences[:4]) + "."
+
+                dispatcher.utter_message(text=text)
             except:
+                dispatcher.utter_message("Sorry, I couldn't find Wikipedia page on "+sci)
                 pass
                 
         except:
@@ -29,3 +36,6 @@ class ActionFetchData(Action):
             
         
         return []
+    
+    
+        

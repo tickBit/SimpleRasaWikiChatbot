@@ -4,19 +4,11 @@ intents:
   - greet
   - goodbye
   - bot_challenge
-  - ask_info{"entity":"science"}
+  - ask_info
 
 entities:
-  - entity
   - science
 
-slots:
-  science:
-    type: text
-    influence_conversation: false
-  entity:
-    type: text
-    influence_conversation: false
  
 responses:
   utter_greet:

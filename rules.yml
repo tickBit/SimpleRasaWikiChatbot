@@ -1,5 +1,11 @@
 version: "2.0"
 rules:
+
+  - rule: tell me about something or ask what something is
+    steps:
+    - intent: ask_info
+    - action: action_fetch_data
+
   - rule: greet
     steps:
       - intent: greet
@@ -8,13 +14,8 @@ rules:
     steps:
       - intent: goodbye
       - action: utter_goodbye
-  
-  - rule: ask info
-    steps:
-      - intent: ask_info
-      - action: action_fetch_data
       
-  - rule: bot challenge
+  - rule: Say 'I am a bot' anytime the user challenges
     steps:
       - intent: bot_challenge
       - action: utter_iamabot

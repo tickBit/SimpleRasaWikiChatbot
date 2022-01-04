@@ -2,13 +2,6 @@ version: "2.0"
 
 nlu:
 
-- intent: bot_challenge
-  examples: |
-    - are you a bot?
-    - are you a human?
-    - am I talking to a bot?
-    - am I talking to a human?
-
 - intent: greet
   examples: |
     - hey
@@ -46,4 +39,11 @@ nlu:
     - tell something about [science]{"entity":"science"}
     - I would like to ask about [science]{"entity":"science"}
 
-
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+    - what are you?
+    

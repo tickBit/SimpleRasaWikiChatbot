@@ -6,7 +6,7 @@
 ## Python modules you'll need:
 - Rasa: pip3 install rasa==2.8.19
   (Create a virtual Python environment, if you have later Rasa installed and you want use the same version as I.
-   It's 2:30 am and I'm too tired now to check how this works with Rasa 3.x :-) )
+   Probably works with Rasa 3.x, too.)
 
 - wikipedia-api: pip install wikipedia-api
 

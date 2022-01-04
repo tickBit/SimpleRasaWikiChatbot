@@ -7,7 +7,7 @@ stories:
   - intent: ask_info
   - action: action_fetch_data
 
-- story: happy path
+- story: greet the user
   steps:
   - intent: greet
   - action: utter_greet
@@ -16,3 +16,8 @@ stories:
   steps:
   - intent: goodbye
   - action: utter_goodbye
+
+- story: say i am a bot
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot

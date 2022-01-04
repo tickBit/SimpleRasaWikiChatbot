@@ -21,14 +21,16 @@ class ActionFetchData(Action):
             try:
                 page_py = wiki_wiki.page(sci)
 
-                sentences = page_py.summary.split(".")
+                if page_py.exists():
+                    sentences = page_py.summary.split(".")
 
-                # get 4 sentences of the summary
-                text = ".".join(sentences[:4]) + "."
+                    # get 4 sentences of the summary
+                    text = ".".join(sentences[:4]) + "."
 
-                dispatcher.utter_message(text=text)
+                    dispatcher.utter_message(text=text)
+                else:
+                    dispatcher.utter_message("Sorry, I couldn't find any information on "+sci)
             except:
-                dispatcher.utter_message("Sorry, I couldn't find Wikipedia page on "+sci)
                 pass
                 
         except:

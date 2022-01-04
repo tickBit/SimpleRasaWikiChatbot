@@ -27,8 +27,6 @@ responses:
   - text: "I am a bot, powered by Rasa."
 
 actions:
-  - utter_greet
-  - utter_goodbye
   - action_fetch_data
 
 session_config:
